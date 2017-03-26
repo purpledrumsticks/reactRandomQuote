@@ -33,6 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <div id="generator" className="generator">
+          <h3>Press the button to reveal a new quote</h3>
           <p>{quote}</p>
           <button onClick={this.randomizer}>New Quote</button>
         </div>
