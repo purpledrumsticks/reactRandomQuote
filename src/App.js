@@ -6,13 +6,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      randomIndex: ''
+      randomIndex: '',
+      header: true
     }
     this.randomizer = this.randomizer.bind(this);
   }
   randomizer() {
     this.setState({
-      randomIndex: Math.floor(Math.random() *  11)
+      randomIndex: Math.floor(Math.random() *  11),
+      header: false
     })
   }
   render() {
@@ -33,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <div id="generator" className="generator">
-          <h3>Press the button to reveal a new quote</h3>
+          {this.state.header && <h2>Press the button to reveal a quote</h2>}
           <p>{quote}</p>
           <button onClick={this.randomizer}>New Quote</button>
         </div>
